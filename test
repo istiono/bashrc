@@ -1,1 +1,15 @@
-
+ #!/bin/bash
+ huapusfile ()
+ {
+ find $1 -type f -execdir truncate -s 0 '{}' \; -execdir mv -i '{}' 0 \; -execdir rm 0 \;
+ }
+ huapusfilekosong ()
+ {
+ find $1 -type f -empty -execdir rm 0 \;
+ find $1 -type f -empty -execdir mv -i '{}' 0 \; -execdir rm 0 \;
+ }
+ huapusdirectorykosong ()
+ {
+ find $1 -type d -empty -execdir rmdir 0 \;
+ find $1 -type d -empty -execdir mv -i '{}' 0 \; -execdir rmdir 0 \;
+ }
