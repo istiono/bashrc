@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
  huapusfile ()
  {
  find $1 -type f -execdir truncate -s 0 '{}' \; -execdir mv -i '{}' 0 \; -execdir rm 0 \;
